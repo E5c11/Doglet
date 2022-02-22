@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.esc.doglet.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dogReviewFragment"
+            app:destination="@id/dogReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.esc.doglet.ui.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_login_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.esc.doglet.ui.fragments.MapFragment"
+        android:label="Dogs near you"
+        tools:layout="@layout/map_fragment" >
+        <action
+            android:id="@+id/action_mapFragment_to_dogReviewFragment"
+            app:destination="@id/dogReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogReviewFragment"
+        android:name="com.esc.doglet.ui.fragments.DogReviewFragment"
+        android:label="dog_review_fragment"
+        tools:layout="@layout/dog_review_fragment" />
+</navigation>
